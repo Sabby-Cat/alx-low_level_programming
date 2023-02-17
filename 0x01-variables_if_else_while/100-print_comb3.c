@@ -21,15 +21,15 @@ int main(void)
 			{
 				putchar(i);
 				putchar(j);
-			}
-			if (j == 9 && i == 8)
-			{
-				;
-			}
-			else
-			{
-				putchar(',');
-				putchar(' ');
+				if (j == 9 && i == 8)
+				{
+					putchar('\n');
+				}
+				else
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
