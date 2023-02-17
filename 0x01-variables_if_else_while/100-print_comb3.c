@@ -9,9 +9,9 @@ int main(void)
 	int i;
 	int j;
 
-	for (i = 0; i < 9; i++)
+	for (i = 48; i < 57; i++)
 	{
-		for (j = 1; j < 10; j++)
+		for (j = 49; j < 58; j++)
 		{
 			if (i >= j)
 			{
@@ -21,7 +21,7 @@ int main(void)
 			{
 				putchar(i);
 				putchar(j);
-				if (j == 9 && i == 8)
+				if (j == 57 && i == 56)
 				{
 					putchar('\n');
 				}
