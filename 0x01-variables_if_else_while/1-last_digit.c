@@ -8,12 +8,12 @@
  */
 int main(void)
 {
-	int n;
+	int n, lastnr;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	/* your code goes there */
-	int lastnr = n % 10;
+	lastnr = n % 10;
 
 	if (lastnr > 5)
 	{
