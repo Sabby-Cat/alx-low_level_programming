@@ -15,7 +15,7 @@ int main(void)
 	{
 		if (c % 2 == 0)
 		{
-			sum += c
+			sum += c;
 		}
 		a = b;
 		b = c;
