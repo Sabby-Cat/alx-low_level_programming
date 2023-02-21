@@ -5,20 +5,20 @@
  */
 int main(void)
 {
-	int i, a, b, c;
+	unsigned long int i, a, b, c;
 
 	a = 1;
 	b = 2;
-	printf("%d, %d, ", a, b);
+	printf("%ld, %ld, ", a, b);
 	for (i = 0; i < 48; i++)
 	{
 		c = a + b;
 		if (i == 47)
 		{
-			printf("%d\n", c);
+			printf("%ld\n", c);
 			return (0);
 		}
-		printf("%d, ", c);
+		printf("%ld, ", c);
 		a = b;
 		b = c;
 	}
