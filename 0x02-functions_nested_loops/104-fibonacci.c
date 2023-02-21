@@ -5,22 +5,44 @@
  */
 int main(void)
 {
-	unsigned long long int i, a, b, c;
+	int count;
+	unsigned long a = 0, b = 1, sum;
+	unsigned long a_half1, a_half2, b_half1, b_half2;
+	unsigned long half1, half2;
 
-	a = 1;
-	b = 2;
-	printf("%ld, %ld, ", a, b);
-	for (i = 0; i < 96; i++)
+	for (count = 0; count < 92; count++)
 	{
-		c = a + b;
-		if (i == 95)
-		{
-			printf("%ld\n", c);
-			return (0);
-		}
-		printf("%ld, ", c);
+		sum = a + b;
+		printf("%lu, ", sum);
+
 		a = b;
-		b = c;
+		b = sum;
 	}
+
+	a_half1 = a / 10000000000;
+	b_half1 = b / 10000000000;
+	a_half2 = a % 10000000000;
+	b_half2 = b % 10000000000;
+
+	for (count = 93; count < 99; count++)
+	{
+		half1 = a_half1 + b_half1;
+		half2 = a_half2 + b_half2;
+		if (a_half2 + b_half2 > 9999999999)
+		{
+			half1 += 1;
+			half2 %= 10000000000;
+		}
+
+		printf("%lu%lu", half1, half2);
+		if (count != 98)
+			printf(", ");
+
+		a_half1 = b_half1;
+		a_half2 = b_half2;
+		b_half1 = half1;
+		b_half2 = half2;
+	}
+	printf("\n");
 	return (0);
 }
