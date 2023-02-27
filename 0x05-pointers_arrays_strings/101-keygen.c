@@ -18,6 +18,6 @@ int main(void)
 		pass += r;
 		putchar(r);
 	}
-	putchar(2772 - sum);
+	putchar(2772 - pass);
 	return (0);
 }
