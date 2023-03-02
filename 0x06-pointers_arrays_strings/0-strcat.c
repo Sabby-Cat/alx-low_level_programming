@@ -8,12 +8,12 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	int i;
+	int i, le = strlen(dest);
 
 	for (i = 0; src[i] != '\0'; i++)
 	{
-		dest[strlen(dest) - 1 + i] = src[i];
+		dest[le + i] = src[i];
 	}
-	dest[strlen(dest) + i] = '\0';
+	dest[le + i] = '\0';
 	return (dest);
 }

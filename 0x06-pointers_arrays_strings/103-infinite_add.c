@@ -35,7 +35,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	if (size_r <= a || size_r <= b)
 		return (0);
-	while (a >= 0 || b >= 0 || overflow == 1)
+	a--;
+	b--;
+	while (a >= 0 || b >= 0 || e == 1)
 	{
 		if (a < 0)
 			v1 = 0;
@@ -50,11 +52,16 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			e = 1;
 		else
 			e = 0;
-		r{p} = (tmp % 10) + '0';
+		if (p >= (size_r - 1))
+			return (0);
+		r[p] = (tmp % 10) + '0';
 		p++;
 		a--;
 		b--;
 	}
+	if (p == size_r)
+		return (0);
+	r[p] = '\0';
 	rev_string(r);
 	return (r);
 }

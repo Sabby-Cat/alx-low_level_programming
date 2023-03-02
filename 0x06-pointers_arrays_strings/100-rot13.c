@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 /**
  * rot13 - encodes a string in rot13
  * @s: sting to be encoded
