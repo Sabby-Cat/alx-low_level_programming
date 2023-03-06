@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _strchr - locates char in string 
+ * _strchr - locates char in string
  * @s: string to be searched
  * @c: character being searched
  * Return: from first instance of char in string
