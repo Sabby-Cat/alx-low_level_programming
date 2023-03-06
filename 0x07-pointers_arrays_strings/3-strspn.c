@@ -19,11 +19,12 @@ unsigned int _strspn(char *s, char *accept)
 				b = 0;
 				break;
 			}
+			else if ()
 		}
 		if (b == 1)
 		{
-			break;
+			return (i);
 		}
 	}
-	return (i);
+	return (0);
 }
