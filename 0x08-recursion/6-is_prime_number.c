@@ -16,7 +16,7 @@ int prime(int n, int i)
 
 /**
  * is_prime_number - figures out in nr is prime
- * @n number being checked
+ * @n: number being checked
  * Return: 1 if prime else 0
  */
 int is_prime_number(int n)

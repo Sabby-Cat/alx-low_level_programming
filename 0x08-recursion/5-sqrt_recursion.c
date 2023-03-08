@@ -3,6 +3,7 @@
  * sqrt_rec - figures out sqr root
  * @n: number
  * @i: increment
+ * Return: ans or -1
  */
 int sqrt_rec(int n, int i)
 {

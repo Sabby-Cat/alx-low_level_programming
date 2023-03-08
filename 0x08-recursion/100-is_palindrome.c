@@ -8,16 +8,16 @@
  */
 int check(char *s, int i, int len)
 {
-        if (*(s + i) != *(s + len - 1))
-                return (0);
-        if (i >= len)
-                return (1);
-        return (check(s, i + 1, len - 1));
+	if (*(s + i) != *(s + len - 1))
+		return (0);
+	if (i >= len)
+		return (1);
+	return (check(s, i + 1, len - 1));
 }
 /**
  * is_palindrome - checks if nr is a palindrome
  * @s: string being checked
- * Return 1 if is else 0
+ * Return: 1 if is else 0
  */
 int is_palindrome(char *s)
 {

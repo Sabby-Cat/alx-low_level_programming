@@ -3,7 +3,7 @@
  * wildcmp - compare 2 string to see if they are identical
  * @s1: string 1
  * @s2: strin 2
- * Return 1 if identical, else 0
+ * Return: 1 if identical, else 0
  */
 int wildcmp(char *s1, char *s2)
 {
