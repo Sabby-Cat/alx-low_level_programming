@@ -1,6 +1,6 @@
 #include "main.h"
 #include <string.h>
-#include <stdlib>
+#include <stdlib.h>
 /**
  * _strdup - creates a duplicate string
  * @str: string to duplicate
