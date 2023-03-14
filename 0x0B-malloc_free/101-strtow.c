@@ -41,7 +41,7 @@ char **strtow(char *str)
 				free(ret);
 				return (NULL);
 			}
-			for (j = 0; s[j] != '\0')
+			for (j = 0; s[j] != '\0'; j++)
 				ret[h][j] = s[j];
 			h++;
 			tot = 0;
