@@ -1,6 +1,24 @@
 #include "main.h"
 #include <stdlib.h>
 /**
+ * ch_free_grid - frees a 2d grid
+ * @grid: grid to be cleared
+ * @height: height of grid to be cleared
+ */
+void ch_free_grid(char **grid, int height)
+{
+	if (grid != NULL && height != 0)
+	{
+		while (height >= 0)
+		{
+			free(grid[height]);
+			height--;
+		}
+		free(grid);
+	}
+}
+
+/**
  * strtow - splits a function into words
  * @str: string array
  * Return: array of strings
@@ -8,15 +26,14 @@
 char **strtow(char *str)
 {
 	char **ret;
-	int i, j, h = 0, ht = 0, tot = 0;
-	char *s = '\0';
+	int i, j, c, a1, ht = 0;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
-	for (i = 0; str[i] != '\0'; i++)
+	for (c = 0; str[c] != '\0'; c++)
 	{
-		if (str[i] != ' ' && (str[i + 1] == ' ' ||
-					str[i + 1] == '\0'))
+		if (str[c] != ' ' && (str[c + 1] == ' ' ||
+					str[c + 1] == '\0'))
 		ht++;
 	}
 	ret = malloc(ht * sizeof(char *));
@@ -25,31 +42,27 @@ char **strtow(char *str)
 		free(ret);
 		return (NULL);
 	}
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = a1 = 0; i < ht; i++)
 	{
-		while (str[i] != ' ' && str[i + 1] != '\0')
-			{
-				s[tot] += str[i];
-				tot++;
-				i++;
-			}
-		if (i > 0 && str[i] == ' ' && str[i - 1] != ' ')
+		for (c = a1; str[c] != '\0'; c++)
 		{
-			ret[h] = malloc((tot + 1) * sizeof(char));
-			if (ret[h] == NULL)
+			if (str[c] == ' ')
+				a1++;
+			if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
 			{
-				free(ret);
-				return (NULL);
+				ret[i] = malloc((c - a1 + 2) * sizeof(char));
+				if (ret[i] == NULL)
+				{
+					ch_free_grid(ret, i);
+					return (NULL);
+				}
+				break;
 			}
-			for (j = 0; s[j] != '\0'; j++)
-				ret[h][j] = s[j];
-			h++;
-			tot = 0;
-			*s = '\0';
 		}
+		for (j = 0; a1 <= c; a1++, j++)
+			ret[i][j] = str[a1];
+		ret[i][j] = '\0';
 	}
-	s[tot] += str[i];
-	for (j = 0; s[j] != '\0'; j++)
-		ret[h][j] = s[j];
+	ret[i] = NULL;
 	return (ret);
 }
