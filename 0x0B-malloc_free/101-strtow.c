@@ -36,7 +36,7 @@ char **strtow(char *str)
 					str[c + 1] == '\0'))
 		ht++;
 	}
-	ret = malloc(ht * sizeof(char *));
+	ret = malloc((ht + 1) * sizeof(char *));
 	if (ret == NULL || ht == 0)
 	{
 		free(ret);
