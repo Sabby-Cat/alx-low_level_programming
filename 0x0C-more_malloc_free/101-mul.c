@@ -14,10 +14,10 @@ int is_digit(char *s)
 	while (s[i])
 	{
 		if (s[i] < '0' || s[i] > '9')
-			return (0);
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 /**
@@ -36,17 +36,17 @@ void errors(void)
  */
 int main(int argc, char *argv[])
 {
-	char a1 = argv[1], a2 = argv[2];
-	int mul, l;
+	char *a1 = argv[1], *a2 = argv[2];
+	int ret;
 
 	if (argc != 3 || is_digit(a1) || is_digit(a2))
 		errors();
-	l = strlen(a1) + strlen(a2) + 1;
-	mul = malloc(sizeof(int) * l);
-	if (mul == 0)
+	/*l = strlen(a1) + strlen(a2) + 1;
+	ret = malloc(sizeof(int) * l);
+	if (ret == 0)
 		return (1);
-
-	mul = atoi(a1) * atoi(a2);
-	printf("$d\n", mul);
+		*/
+	ret = atoi(a1) * atoi(a2);
+	printf("%d\n", ret);
 	return (0);
 }
