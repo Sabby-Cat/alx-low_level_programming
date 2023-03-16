@@ -37,16 +37,48 @@ void errors(void)
 int main(int argc, char *argv[])
 {
 	char *a1 = argv[1], *a2 = argv[2];
-	int ret;
+	int *ret, i, l, l1, l2, d1, d2, sto, b = 0;
 
 	if (argc != 3 || is_digit(a1) || is_digit(a2))
 		errors();
-	/*l = strlen(a1) + strlen(a2) + 1;
+	l1 = strlen(a1), l2 = strlen(a2);
+	l = l1 + l2 + 1;
 	ret = malloc(sizeof(int) * l);
-	if (ret == 0)
+	if (!ret)
 		return (1);
-		*/
-	ret = atoi(a1) * atoi(a2);
-	printf("%d\n", ret);
+	
+	for (i = 0; i <= l1 + l2; i++)
+		ret[i] = 0;
+
+	for (l1 = l1 - 1; l1 >= 0; l1--)
+	{
+		d1 = a1[l1] - '0';
+		/*_putchar(a1[l1]);
+		 */
+		sto = 0;
+		for (l2 = strlen(a2) - 1; l2 >= 0; l2--)
+		{
+			d2 = a2[l2] - '0';
+			/*_putchar(a2[l2]);
+			 */
+			sto += ret[l1 + l2 + 1] + (d1 * d2);
+			ret[l1 + l2 + 1] = sto % 10;
+			sto /= 10;
+		}
+		if (sto > 0)
+			ret [l1 + l2 + 1] += sto;
+	}
+	for (i = 0; i < l - 1; i++)
+	{
+		if (ret[i])
+			b = 1;
+		if (b)
+			_putchar(ret[i] + '0');
+	}
+	if (!b)
+		_putchar('0');
+
+	_putchar('\n');
+	free(ret);
 	return (0);
 }
