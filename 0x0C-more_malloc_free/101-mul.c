@@ -46,10 +46,8 @@ int main(int argc, char *argv[])
 	ret = malloc(sizeof(int) * l);
 	if (!ret)
 		return (1);
-	
 	for (i = 0; i <= l1 + l2; i++)
 		ret[i] = 0;
-
 	for (l1 = l1 - 1; l1 >= 0; l1--)
 	{
 		d1 = a1[l1] - '0';
@@ -62,7 +60,7 @@ int main(int argc, char *argv[])
 			sto /= 10;
 		}
 		if (sto > 0)
-			ret [l1 + l2 + 1] += sto;
+			ret[l1 + l2 + 1] += sto;
 	}
 	for (i = 0; i < l - 1; i++)
 	{
@@ -73,7 +71,6 @@ int main(int argc, char *argv[])
 	}
 	if (!b)
 		_putchar('0');
-
 	_putchar('\n');
 	free(ret);
 	return (0);
