@@ -53,14 +53,10 @@ int main(int argc, char *argv[])
 	for (l1 = l1 - 1; l1 >= 0; l1--)
 	{
 		d1 = a1[l1] - '0';
-		/*_putchar(a1[l1]);
-		 */
 		sto = 0;
 		for (l2 = strlen(a2) - 1; l2 >= 0; l2--)
 		{
 			d2 = a2[l2] - '0';
-			/*_putchar(a2[l2]);
-			 */
 			sto += ret[l1 + l2 + 1] + (d1 * d2);
 			ret[l1 + l2 + 1] = sto % 10;
 			sto /= 10;
