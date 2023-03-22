@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * main -
+ * main - prints opcodes
  * @argc: count
  * @argv: vector
- * Return:
+ * Return: 0
  */
 int main(int argc, char *argv[])
 {
