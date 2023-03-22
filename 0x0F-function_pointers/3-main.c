@@ -1,4 +1,4 @@
-#include "3-main.c"
+#include "3-calc.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
@@ -7,7 +7,7 @@
  * @argv: vector
  * Return: 0
  */
-int main(int argc, char argv[])
+int main(int argc, char *argv[])
 {
 	int (*func)(int, int);
 
