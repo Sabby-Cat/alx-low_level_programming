@@ -1,5 +1,5 @@
 #include <stdio.h>
-void first() __attribute__((constructor));
+void first(void) __attribute__((constructor));
 /**
  * first - print before main
  */

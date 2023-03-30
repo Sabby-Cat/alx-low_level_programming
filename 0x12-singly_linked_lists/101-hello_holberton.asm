@@ -4,5 +4,6 @@ main:
 	mov rdi, format
 	xor rax, rax
 	call printf
+	mov rax, 0
 	ret
 format: db `Hello, Holberto\n`,0
