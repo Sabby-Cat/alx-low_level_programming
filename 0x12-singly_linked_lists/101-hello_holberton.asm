@@ -6,4 +6,4 @@ main:
 	call printf
 	mov rax, 0
 	ret
-format: db `Hello, Holberto\n`,0
+format: db `Hello, Holberton\n`,0
