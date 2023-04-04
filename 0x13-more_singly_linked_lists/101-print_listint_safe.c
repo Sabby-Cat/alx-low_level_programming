@@ -14,7 +14,7 @@ size_t print_listint_safe(const listint_t *head)
 	while (head)
 	{
 		if (!head)
-                	exit(98);
+			exit(98);
 		sto = head - head->next;
 		c++;
 		printf("[%p] %d\n", (void *)head, head->n);
