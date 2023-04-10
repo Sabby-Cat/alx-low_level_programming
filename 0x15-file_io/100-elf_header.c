@@ -1,4 +1,15 @@
 #include "main.h"
+
+void check_elf(unsigned char *id);
+void print_magic(unsigned char *id);
+void print_class(unsigned char *id);
+void print_data(unsigned char *id);
+void print_version(unsigned char *id);
+void print_abi(unsigned char *id);
+void print_osabi(unsigned char *id);
+void print_type(unsigned int tp, unsigned char *id);
+void print_entry(unsigned long int ent, unsigned char *id);
+void close_elf(int f);
 /**
  * check_elf - Checks if ELF file exists
  * @id: ELF array
