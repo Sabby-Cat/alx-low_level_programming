@@ -7,7 +7,7 @@
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-  dlistint_t *list = NULL, *end = *head;
+	dlistint_t *list = NULL, *end = *head;
 
 	list = malloc(sizeof(dlistint_t));
 	if (list == NULL)

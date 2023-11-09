@@ -1,13 +1,13 @@
 #include "lists.h"
 /**
- * delete_dnodeint_at_index -
- * @head:list
+ * delete_dnodeint_at_index - deletes node at index
+ * @head: list
  * @index: positin
  * Return: 1 or -1
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-  dlistint_t *h1, *h2;
+	dlistint_t *h1, *h2;
 	unsigned int c;
 
 	h1 = *head;
@@ -38,4 +38,4 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		h1 = h1->next;
 	}
 	return (-1);
- }
+}

@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * insert_dnodeint_at_index -
+ * insert_dnodeint_at_index - inserts n at idx
  * @h: list
  * @idx: Position
  * @n: info
@@ -8,7 +8,7 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
 {
-  dlistint_t *old, *new = malloc(sizeof(dlistint_t));
+	dlistint_t *old, *new = malloc(sizeof(dlistint_t));
 	unsigned int c;
 
 	if (h == NULL || new == NULL)
