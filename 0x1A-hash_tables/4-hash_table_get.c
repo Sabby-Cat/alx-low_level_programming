@@ -1,6 +1,6 @@
 #include "hash_tables.h"
 /**
- * hash_table_get - 
+ * hash_table_get - gets info at point
  * @ht: hash table used
  * @key: key to find
  * Return: value associated with element or null
