@@ -96,6 +96,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			nxt->snext->sprev = new;
 		nxt->snext = new;
 	}
+	return (1);
 }
 
 /**
@@ -170,8 +171,8 @@ void shash_table_print_rev(const shash_table_t *ht)
  */
 void shash_table_delete(shash_table_t *ht)
 {
-	hash_table_t *head = ht;
-	hash_node_t *nxt, *node;
+	shash_table_t *head = ht;
+	shash_node_t *nxt, *node;
 
 	if (ht == NULL)
 		return;
