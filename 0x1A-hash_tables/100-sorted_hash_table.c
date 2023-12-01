@@ -6,21 +6,21 @@
  */
 shash_table_t *shash_table_create(unsigned long int size)
 {
-    shash_table_t *ht;
-    unsigned long int ind;
+	shash_table_t *ht;
+	unsigned long int ind;
 
-    ht = malloc(sizeof(shash_table_t));
-    if (ht == NULL)
-        return (NULL);
-    ht->size = size;
-    ht->array = malloc(sizeof(shash_node_t *) * size);
-    if (ht->array == NULL)
-        return (NULL);
-    for (ind = 0; ind < size; ind++)
-        ht->array[ind] = NULL;
-    ht->shead = NULL;
-    ht->stail = NULL;
-    return (ht);
+	ht = malloc(sizeof(shash_table_t));
+	if (ht == NULL)
+		return (NULL);
+	ht->size = size;
+	ht->array = malloc(sizeof(shash_node_t *) * size);
+	if (ht->array == NULL)
+		return (NULL);
+	for (ind = 0; ind < size; ind++)
+		ht->array[ind] = NULL;
+	ht->shead = NULL;
+	ht->stail = NULL;
+	return (ht);
 }
 
 /**
@@ -32,7 +32,7 @@ shash_table_t *shash_table_create(unsigned long int size)
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
-    shash_node_t *new, *nxt;
+	shash_node_t *new, *nxt;
 	char *cp;
 	unsigned long int ind;
 
@@ -106,7 +106,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  */
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
-    shash_node_t *node;
+	shash_node_t *node;
 	unsigned long int ind;
 
 	if (ht == NULL || key == NULL || *key == '\0')
@@ -126,7 +126,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
  */
 void shash_table_print(const shash_table_t *ht)
 {
-    shash_node_t *node;
+	shash_node_t *node;
 
 	if (ht == NULL)
 		return;
@@ -148,7 +148,7 @@ void shash_table_print(const shash_table_t *ht)
  */
 void shash_table_print_rev(const shash_table_t *ht)
 {
-    shash_node_t *node;
+	shash_node_t *node;
 
 	if (ht == NULL)
 		return;
@@ -170,10 +170,10 @@ void shash_table_print_rev(const shash_table_t *ht)
  */
 void shash_table_delete(shash_table_t *ht)
 {
-    hash_table_t *head = ht;
+	hash_table_t *head = ht;
 	hash_node_t *nxt, *node;
 
-    if (ht == NULL)
+	if (ht == NULL)
 		return;
 	node = ht->shead;
 	while (node)
