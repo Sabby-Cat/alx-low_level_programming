@@ -1,12 +1,12 @@
 #include "search_algos.h"
 /**
- * binary_recursive - recusrive algorithm for binary search
+ * binary_recur - recusrive algorithm for binary search
  * @array: pointer to first pos
  * @size: array size
  * @value: value to search
  * Return: index of value
  */
-size_t binary_recursive(int *array, size_t size, int value)
+size_t binary_recur(int *array, size_t size, int value)
 {
 	size_t cent = size / 2;
 	size_t i;
@@ -21,9 +21,9 @@ size_t binary_recursive(int *array, size_t size, int value)
 	if (value == array[cent])
 		return (cent);
 	if (value < array[cent])
-		return (binary_recursive(array, cent, value));
+		return (binary_recur(array, cent, value));
 	cent++;
-	return (binary_recursive(array + cent, size - cent, value) + cent);
+	return (binary_recur(array + cent, size - cent, value) + cent);
 }
 /**
  * binary_search - searches for a value in a sorted array
@@ -36,7 +36,7 @@ int binary_search(int *array, size_t size, int value)
 {
 	int val;
 
-	val = binary_recursive(array, size, value);
+	val = binary_recur(array, size, value);
 	if (val >= 0 && array[val] != value)
 		return (-1);
 	return (val);
